@@ -1,1 +1,6 @@
-Hosted on [render.com](https://b64.onrender.com/_.html)
+<div align="center">
+
+# Base64 Encoder
+#### Encode Base64 on the client side.
+
+</div>

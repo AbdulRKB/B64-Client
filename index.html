@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASE64</title>
+    <style>
+        #title{text-align: center;font-size: 30px;color: #f5f6fa;}
+        body{background: #222f3e;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        textarea{resize: vertical;min-height: 100px;max-height: 200px;outline: 0;font-size: 20px;border-radius: 5px;background: #c8d6e5;border: 8px solid #111;padding: 5px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        label{margin: 5px;font-size: 22px;font-weight: bolder;}
+        .igroups{display: flex;flex-direction: column-reverse;background: #576574;padding: 15px;border-radius: 5px;width: 80%; margin: auto;}
+        textarea::-webkit-scrollbar-track {background: transparent;}
+        textarea::-webkit-resizer{background: #111;border-top-left-radius: 5px;}
+        *::selection{
+            background: rgba(256, 256, 256, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="title">BASE64</h2>
+        <div class="igroups">
+            <textarea id="plain"></textarea>
+            <label for="plain">Plain Text</label>
+            <textarea id="base"></textarea>
+            <label for="base">Base</label>
+        </div>
+    </div>
+    <script>
+        const plain = document.getElementById('plain');
+        const base = document.getElementById('base');
+        plain.addEventListener('input',()=>{
+            base.value = btoa(plain.value);
+        });
+        base.addEventListener('input',()=>{
+            plain.value = atob(base.value);
+        });
+    </script>
+</body>
+</html>
